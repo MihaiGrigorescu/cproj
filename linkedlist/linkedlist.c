@@ -70,10 +70,5 @@ void main()
 {
     nod* head = initList();
     printf("Valoarea primului nod este %d",head->value);
-<<<<<<< HEAD
-    printf("XXX");
-    
-=======
-    print("trying some new stuff");
->>>>>>> f2d05daee6524be9e1ee2457fae10b5cdc021c36
+    printf("XXX");   
 }
