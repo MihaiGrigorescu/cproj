@@ -11,7 +11,7 @@ typedef struct Nod
 
 // prototipuri
 nod* initList();
-int listLength(nod* head);
+int listInfo(nod* head);
 void push(nod* head, int val);
 void pop(nod* head);
 
@@ -34,21 +34,23 @@ nod* initList()
     return head;
 }
 
-// return length of list
-int listLength(nod* head)
+// return length of list and prints list values
+int listInfo(nod* head)
 {
     nod* aux = head;
     int counter = 0;
     if(aux != NULL)
     {
         counter++;
-       while(aux->next != NULL)
+        while(aux->next != NULL)
         {
+            printf("Valoarea nodului %d este %d\n",counter,aux->value);
             counter ++;
             aux = aux->next;
         } 
     }
 
+    printf("Valoarea nodului %d este %d\n",counter,aux->value);
     return counter;   
 }
 
@@ -68,18 +70,42 @@ void push(nod* head, int val)
     
 }
 
+// delete last element from the list
 void pop(nod* head)
 {
+    nod* current = NULL;
+    nod* previous = NULL;
+
+    if(head->next == NULL)
+    {
+        free(head);
+    }
+    else
+    {
+        current = head;
+        while(current->next != NULL)
+        {
+            previous = current;
+            current = current->next;            
+        }
+        previous->next = NULL;
+        free(current);
+    }
     
 }
 
 void main()
 {
     nod* head = initList();
-    printf("Valoarea primului nod este %d \n",head->value);
 
     push(head,3);
     push(head,5);
     push(head,7);
-    printf("Lungimea listei este : %d\n",listLength(head));
+    printf("Lungimea listei este : %d\n",listInfo(head));
+    pop(head);
+    pop(head);
+    pop(head);
+    pop(head);
+    printf("POPED!\n");
+    printf("Lungimea listei este : %d\n",listInfo(head));
 }
