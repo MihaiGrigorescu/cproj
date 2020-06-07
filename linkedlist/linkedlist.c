@@ -13,6 +13,7 @@ typedef struct Nod
 nod* initList();
 int listLength(nod* head);
 void push(nod* head, int val);
+void pop(nod* head);
 
 
 
@@ -40,6 +41,7 @@ int listLength(nod* head)
     int counter = 0;
     if(aux != NULL)
     {
+        counter++;
        while(aux->next != NULL)
         {
             counter ++;
@@ -66,10 +68,18 @@ void push(nod* head, int val)
     
 }
 
+void pop(nod* head)
+{
+    
+}
+
 void main()
 {
     nod* head = initList();
-    printf("Valoarea primului nod este %d",head->value);
-    printf("XXX");   
-    printf("alabala");
+    printf("Valoarea primului nod este %d \n",head->value);
+
+    push(head,3);
+    push(head,5);
+    push(head,7);
+    printf("Lungimea listei este : %d\n",listLength(head));
 }
