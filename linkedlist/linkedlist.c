@@ -47,10 +47,14 @@ int listInfo(nod* head)
             printf("Valoarea nodului %d este %d\n",counter,aux->value);
             counter ++;
             aux = aux->next;
-        } 
+        }
+        printf("Valoarea nodului %d este %d\n",counter,aux->value); 
+    }
+    else
+    {
+        printf("Lista este goala!\n");
     }
 
-    printf("Valoarea nodului %d este %d\n",counter,aux->value);
     return counter;   
 }
 
@@ -98,13 +102,10 @@ void main()
 {
     nod* head = initList();
 
-    push(head,3);
-    push(head,5);
-    push(head,7);
+ //   push(head,3);
+ //   push(head,5);
+//    push(head,7);
     printf("Lungimea listei este : %d\n",listInfo(head));
-    pop(head);
-    pop(head);
-    pop(head);
     pop(head);
     printf("POPED!\n");
     printf("Lungimea listei este : %d\n",listInfo(head));
