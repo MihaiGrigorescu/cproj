@@ -103,9 +103,6 @@ void main()
     push(head,7);
     printf("Lungimea listei este : %d\n",listInfo(head));
     pop(head);
-    pop(head);
-    pop(head);
-    pop(head);
     printf("POPED!\n");
     printf("Lungimea listei este : %d\n",listInfo(head));
 }
