@@ -14,6 +14,7 @@ nod* initList();
 int listInfo(nod* head);
 void push(nod* head, int val);
 void pop(nod* head);
+void remove_head(nod* head);
 
 
 
@@ -102,9 +103,10 @@ void main()
 {
     nod* head = initList();
 
- //   push(head,3);
- //   push(head,5);
-//    push(head,7);
+    push(head,1);
+    push(head,2);
+    push(head,3);
+    push(head,5);
     printf("Lungimea listei este : %d\n",listInfo(head));
     pop(head);
     printf("POPED!\n");
